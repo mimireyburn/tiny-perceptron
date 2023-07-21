@@ -35,7 +35,7 @@ def fetch_items_from_postgres():
         )
 
         # Fetch all items from PostgreSQL
-        pg_cursor.execute("SELECT item_keys FROM items;")
+        pg_cursor.execute("SELECT items.item_key FROM items;")
         items = pg_cursor.fetchall()
 
         # Add items to Redis
