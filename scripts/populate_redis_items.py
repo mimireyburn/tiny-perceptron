@@ -10,7 +10,7 @@ def fetch_items_from_postgres():
     pg_password = "E5rG7tY3fH"
 
     # Redis connection details
-    redis_host = "redis"
+    redis_host = "localhost"
     redis_port = "6379"
     redis_password = "MvY4bQ7uN3"
 
@@ -23,7 +23,6 @@ def fetch_items_from_postgres():
             user=pg_user,
             password=pg_password
         )
-        print(pg_connection)
         pg_cursor = pg_connection.cursor()
 
         # Connect to Redis
