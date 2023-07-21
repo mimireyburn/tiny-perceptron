@@ -72,11 +72,10 @@ def process_message(msg):
 
 
 def get_data():
-  msg = app.state.c.poll(1.0)
-  if msg is None:
-    continue
-  msg
-  return process_message(msg)
+  while True:
+    msg = app.state.c.poll(1.0)
+    return process_message(msg)
+
 
 
 
