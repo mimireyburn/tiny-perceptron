@@ -6,13 +6,13 @@ import json
 import time
 import psycopg2
 
-p = psycopg2.connect(host="postgres", user="root", port=5432, database="W9sV6cL2dX", password="E5rG7tY3fH")
 
 app = fastapi.FastAPI()
 
 @app.on_event("startup")
 async def startup_event():
     app.state.r = redis.Redis(host="redis", port=6379, db=0, password="MvY4bQ7uN3")
+    app.state.a = redis.Redis(host="redis", port=6379, db=1, password="MvY4bQ7uN3")
     app.state.k = confluent_kafka.Producer({"bootstrap.servers": "kafka:29092"})
     app.state.c = confluent_kafka.Consumer({"bootstrap.servers": "kafka:29092", "group.id": "pg-group-1", "auto.offset.reset": "earliest"})
     app.state.c.subscribe(["recommender"])
@@ -22,61 +22,6 @@ async def startup_event():
 def shutdown_event():
     app.state.k.flush()
 
-def pull_from_postgres():
-
-  pull_query = """
-    SELECT item_key
-    FROM items
-    ORDER BY RANDOM()
-    LIMIT 1
-    OFFSET 0
-  """
-
-  try:
-    cursor = p.cursor()
-    cursor.execute(pull_query)
-    result = cursor.fetchone()
-    cursor.close()
-    p.close()
-    print("Item pulled", result[0])
-    if result:
-      return result[0]
-    else:
-        return None
-  except Exception as e:
-    # PG_ERRORS.inc() # This is a Prometheus command
-    print("Worker error: ", e)
-    return None
-
-
-def process_message(msg):
-    if msg is None:
-        print("Received empty Kafka message, skipping...")
-        return None
-
-    try:
-        # Parse the message value as JSON
-        message_value = json.loads(msg.value())
-        # Check if the message has the 'item_id' field
-        if 'item_id' in message_value:
-            return message_value['item_id']  # Return the 'item_id' value
-        else:
-            print("Received message without 'item_id' field, skipping...")
-    except json.JSONDecodeError as e:
-        print(f"Failed to decode JSON message: {e}")
-    except KeyError as e:
-        print(f"Message is missing 'item_id' field: {e}")
-    return None
-
-
-
-
-def get_data():
-  while True:
-    msg = app.state.c.poll(1.0)
-    return process_message(msg)
-
-
 
 @app.get("/")
 def read_root(request: fastapi.Request):
@@ -84,11 +29,7 @@ def read_root(request: fastapi.Request):
     user_id = request.headers.get("User")
     session = request.headers.get("Session")
 
-    item_id = pull_from_postgres()
-    print("ITEM ID RETURNED FROM KAFKA: ", item_id)
-    # if item_id is None:
-    #   item_id = pull_from_postgres()
-
+    item_id = app.state.a.redis_connection.srandmember("item_set")
     ts = int(time.time())
 
     print(f"User {user_id} in session {session} requested an item at {ts}")
