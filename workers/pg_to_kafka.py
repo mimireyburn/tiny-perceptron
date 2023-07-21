@@ -8,7 +8,7 @@ import utils
 
 utils.check_connection_status("postgres", 5432)
 p = psycopg2.connect(host="postgres", user="root", port=5432, database="W9sV6cL2dX", password="E5rG7tY3fH")
-k = confluent_kafka.Producer({"bootstrap.servers": "kafka:29092"})
+producer = confluent_kafka.Producer({"bootstrap.servers": "kafka:29092"})
 
 def pull_from_postgres():
 
