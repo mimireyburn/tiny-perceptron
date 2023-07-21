@@ -29,7 +29,7 @@ def read_root(request: fastapi.Request):
     user_id = request.headers.get("User")
     session = request.headers.get("Session")
 
-    item_id = app.state.a.redis_connection.srandmember("item_set")
+    item_id = app.state.a.srandmember("item_set")
     ts = int(time.time())
 
     print(f"User {user_id} in session {session} requested an item at {ts}")
