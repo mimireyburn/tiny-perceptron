@@ -4,6 +4,7 @@ import psycopg2
 import datetime
 import json
 import utils
+import time 
 
 
 utils.check_connection_status("postgres", 5432)
