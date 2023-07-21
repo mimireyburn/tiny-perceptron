@@ -4,9 +4,11 @@ import redis
 import uuid
 import json
 import time
+import psycopg2
+
+p = psycopg2.connect(host="postgres", user="root", port=5432, database="W9sV6cL2dX", password="E5rG7tY3fH")
 
 app = fastapi.FastAPI()
-
 
 @app.on_event("startup")
 async def startup_event():
@@ -19,6 +21,32 @@ async def startup_event():
 @app.on_event("shutdown")
 def shutdown_event():
     app.state.k.flush()
+
+def pull_from_postgres():
+
+  pull_query = """
+    SELECT item_key
+    FROM items
+    ORDER BY RANDOM()
+    LIMIT 1
+    OFFSET 0
+  """
+
+  try:
+    cursor = p.cursor()
+    cursor.execute(pull_query)
+    result = cursor.fetchone()
+    cursor.close()
+    p.close()
+    print("Item pulled", result[0])
+    if result:
+      return result[0]
+    else:
+        return None
+  except Exception as e:
+    # PG_ERRORS.inc() # This is a Prometheus command
+    print("Worker error: ", e)
+    return None
 
 
 def process_message(msg):
@@ -44,8 +72,12 @@ def process_message(msg):
 
 
 def get_data():
-    msg = app.state.c.poll(1.0)
-    return process_message(msg)
+  msg = app.state.c.poll(1.0)
+  if msg is None:
+    continue
+  msg
+  return process_message(msg)
+
 
 
 @app.get("/")
@@ -57,7 +89,7 @@ def read_root(request: fastapi.Request):
     item_id = get_data()
     print("ITEM ID RETURNED FROM KAFKA: ", item_id)
     if item_id is None:
-        return "No data available"
+      item_id = pull_from_postgres()
 
     ts = int(time.time())
 
