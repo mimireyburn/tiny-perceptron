@@ -78,17 +78,16 @@ def get_data():
 
 
 
-
 @app.get("/")
 def read_root(request: fastapi.Request):
     app.state.r.incr("test_counter")
     user_id = request.headers.get("User")
     session = request.headers.get("Session")
 
-    item_id = get_data()
+    item_id = pull_from_postgres()
     print("ITEM ID RETURNED FROM KAFKA: ", item_id)
-    if item_id is None:
-      item_id = pull_from_postgres()
+    # if item_id is None:
+    #   item_id = pull_from_postgres()
 
     ts = int(time.time())
 
