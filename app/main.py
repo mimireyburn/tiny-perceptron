@@ -22,7 +22,8 @@ def shutdown_event():
 
 
 def process_message(msg):
-    if msg is None:
+    if msg is None or msg.error():
+        print("Error while receiving Kafka message:", msg.error())
         return None
 
     try:
@@ -38,6 +39,7 @@ def process_message(msg):
     except KeyError as e:
         print(f"Message is missing 'item_id' field: {e}")
     return None
+
 
 
 def get_data():
