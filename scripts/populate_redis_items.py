@@ -29,6 +29,7 @@ def fetch_items_from_postgres():
         redis_connection = redis.StrictRedis(
             host=redis_host,
             port=redis_port,
+            db=1,
             password=redis_password,
             decode_responses=True
         )
