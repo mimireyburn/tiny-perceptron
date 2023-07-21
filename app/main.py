@@ -12,7 +12,7 @@ app = fastapi.FastAPI()
 async def startup_event():
     app.state.r = redis.Redis(host="redis", port=6379, db=0, password="MvY4bQ7uN3")
     app.state.k = confluent_kafka.Producer({"bootstrap.servers": "kafka:29092"})
-    app.state.c = confluent_kafka.Consumer({"bootstrap.servers": "kafka:29092", "group.id": "pg-group-1", "auto.offset.reset": "latest"})
+    app.state.c = confluent_kafka.Consumer({"bootstrap.servers": "kafka:29092", "group.id": "pg-group-1", "auto.offset.reset": "earliest"})
     app.state.c.subscribe(["recommender"])
 
 
@@ -22,8 +22,8 @@ def shutdown_event():
 
 
 def process_message(msg):
-    if msg is None or msg.error():
-        print("Error while receiving Kafka message:", msg.error())
+    if msg is None:
+        print("Received empty Kafka message, skipping...")
         return None
 
     try:
@@ -39,6 +39,7 @@ def process_message(msg):
     except KeyError as e:
         print(f"Message is missing 'item_id' field: {e}")
     return None
+
 
 
 
