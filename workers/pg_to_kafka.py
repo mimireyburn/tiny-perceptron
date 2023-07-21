@@ -51,12 +51,12 @@ def produce_to_topic(message):
 
 
 def main():
-  if message is not None: 
     message = pull_from_postgres()
-    produce_to_topic(message)
-    print("Fetched and sent: ", message)
-  else: 
-    print("No data found!")
+    if message is not None:
+      produce_to_topic(message)
+      print("Fetched and sent: ", message)
+    else: 
+      print("No data found!")
 
 
 if __name__ == "__main__":
