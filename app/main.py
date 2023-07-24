@@ -28,7 +28,9 @@ def read_root(request: fastapi.Request):
     session = request.headers.get("Session")
 
     random_item_key = app.state.a.randomkey()
+    print(random_item_key)
     random_item_info = app.state.a.hgetall(random_item_key)
+    print(random_item_info)
     item_id = random_item_info['id']
     ts = int(time.time())
 
