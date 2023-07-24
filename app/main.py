@@ -14,7 +14,6 @@ async def startup_event():
     app.state.r = redis.Redis(host="redis", port=6379, db=0, password="MvY4bQ7uN3")
     app.state.a = redis.Redis(host="redis", port=6379, db=1, password="MvY4bQ7uN3")
     app.state.k = confluent_kafka.Producer({"bootstrap.servers": "kafka:29092"})
-    app.state.c = confluent_kafka.Consumer({"bootstrap.servers": "kafka:29092", "group.id": "pg-group-1", "auto.offset.reset": "earliest"})
     app.state.c.subscribe(["recommender"])
 
 
@@ -29,7 +28,9 @@ def read_root(request: fastapi.Request):
     user_id = request.headers.get("User")
     session = request.headers.get("Session")
 
-    item_id = app.state.a.srandmember("item_set")
+    random_item_key = app.state.a.randomkey()
+    random_item_info = app.state.a.hgetall(random_item_key)
+    item_id = random_item_info['id']
     ts = int(time.time())
 
     print(f"User {user_id} in session {session} requested an item at {ts}")
