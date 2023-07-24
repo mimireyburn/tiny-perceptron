@@ -12,8 +12,21 @@ services:
       REDIS_ARGS: --requirepass MvY4bQ7uN3
     volumes:
       - ./data_redis:/data
-
+  
   postgres:
+    image: postgres:13.3
+    user: root
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: E5rG7tY3fH
+      POSTGRES_DB: W9sV6cL2dX
+    volumes:
+      - ./data_pg:/var/lib/postgresql/data
+
+  pi:
     image: postgres:13.3
     user: root
     restart: always

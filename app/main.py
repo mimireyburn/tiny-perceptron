@@ -11,8 +11,8 @@ app = fastapi.FastAPI()
 
 @app.on_event("startup")
 async def startup_event():
-    app.state.r = redis.Redis(host="redis", port=6379, db=0, password="MvY4bQ7uN3")
-    app.state.a = redis.Redis(host="redis", port=6379, db=1, password="MvY4bQ7uN3")
+    app.state.r = redis.Redis(host="redis", port=6379, db=0, password="MvY4bQ7uN3", decode_responses=True)
+    app.state.a = redis.Redis(host="redis", port=6379, db=1, password="MvY4bQ7uN3", decode_responses=True)
     app.state.k = confluent_kafka.Producer({"bootstrap.servers": "kafka:29092"})
 
 
