@@ -12,3 +12,4 @@ while True:
     raw_res = msg.value().decode("utf-8")
     cur_res = json.loads(raw_res)
     print("cur_res", cur_res)
+# %%

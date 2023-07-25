@@ -6,7 +6,7 @@ docker_compose([
 ])
 
 dc_resource("app",        labels=["app"])
-dc_resource("worker",     labels=["app"])
+dc_resource("kafka_to_pg_worker",        labels=["app"])
 
 dc_resource("kafka",      labels=["kafka"])
 dc_resource("kafka-ui",   labels=["kafka"])

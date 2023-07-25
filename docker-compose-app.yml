@@ -9,10 +9,10 @@ services:
     volumes:
       - .:/src
 
-  worker:
+  kafka_to_pg_worker:
     build: .
     restart: always
-    command: python -u workers/kafka_to_pg_logs.py
+    command: python -u workers/kafka_to_pg_logs.py 
     ports:
       - 9965:9965
     volumes:

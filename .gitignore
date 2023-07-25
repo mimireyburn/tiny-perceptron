@@ -7,3 +7,4 @@ data_redis
 data_pg
 monitor/grafana
 monitor/prometheus/data
+pgadmin4.db

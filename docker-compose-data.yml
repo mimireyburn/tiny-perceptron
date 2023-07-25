@@ -12,7 +12,7 @@ services:
       REDIS_ARGS: --requirepass MvY4bQ7uN3
     volumes:
       - ./data_redis:/data
-
+  
   postgres:
     image: postgres:13.3
     user: root
