@@ -28,7 +28,7 @@ def index():
         connection.commit()
 
     # After updating (if it was a POST request), or if it's a GET request, get a new image
-    cur.execute("SELECT item_key, url, labels_resnet50, labels_resnet34, labels_resnet101, labels_resnet152 FROM item_img_content WHERE user_input1 IS NULL LIMIT 1")
+    cur.execute("SELECT item_key, url, labels_resnet50, labels_resnet34, labels_resnet101, labels_resnet152 FROM item_img_content WHERE user_input1 IS NULL ORDER BY random() LIMIT 1")
     row = cur.fetchone()
 
     if row is None:
@@ -41,4 +41,4 @@ def index():
     return render_template('label.html', url=url, labels=labels, item_id=item_id)  # Pass the item_id to the template as well
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000 ,debug=True)
