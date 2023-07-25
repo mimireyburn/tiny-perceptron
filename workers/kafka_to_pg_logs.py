@@ -26,8 +26,9 @@ def insert_to_postgres(store):
       evnt_stamp,
       user_id,
       session_id,
-      item_id
-    ) VALUES (%s, %s, %s, %s, %s, %s)
+      item_id,
+      type
+    ) VALUES (%s, %s, %s, %s, %s, %s, %s)
   """
 
   insert_data = []
@@ -41,8 +42,11 @@ def insert_to_postgres(store):
       evt_log["ts"],
       evt_log["user_id"],
       evt_log["session"],
-      evt_log["item_id"]
+      evt_log["item_id"], 
+      evt_log["type"]
     ))
+
+    print(evt_log)
 
   try:
     cursor = p.cursor()
@@ -62,6 +66,7 @@ def main():
     if msg.error(): continue
     raw_res = msg.value().decode("utf-8")
     cur_res = json.loads(raw_res)
+    print("res", cur_res)
     store.append(cur_res)
     if len(store) > 5:
       insert_to_postgres(store)
