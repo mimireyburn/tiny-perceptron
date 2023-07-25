@@ -36,7 +36,7 @@ def index():
 
     item_id, url, resnet50, resnet34, resnet101, resnet152 = row
     labels = set([resnet50, resnet34, resnet101, resnet152])  # Create a set to remove duplicate labels
-    labels.add('None of these')
+    
 
     return render_template('label.html', url=url, labels=labels, item_id=item_id)  # Pass the item_id to the template as well
 
