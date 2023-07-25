@@ -4,7 +4,13 @@
     <title>Image Labeling</title>
 </head>
 <body>
-    <h1>Label this image</h1>
+    <p>Images remaining to label: {{ remaining_rows }}</p>
+    <a href="/download" class="button">Download Currently Labeled Items as CSV!</a>
+    <h1>Label this image!</h1>
+    <p>Usage: Select one or more options that apply or input your label.</p>
+    <p>If you want to add more than one label, enter like this: cat, animal</p>
+    
+
     <img src="{{ url }}" alt="Image to label">
     <form method="POST">
         {% for label in labels %}

@@ -65,7 +65,7 @@ def get_evt(request: fastapi.Request):
 
     # package end session event and send it
     # to kafka servers directly, no batching
-    log_msg = json.dumps({"type": "evt", "user_id": user_id, "session": session, "ts": ts})
+    log_msg = json.dumps({"type": "evt", "user_id": user_id, "session": session, "ts": ts, "item_id": None})
     app.state.k.produce("logs", log_msg)
     app.state.k.flush()
 
