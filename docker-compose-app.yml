@@ -17,10 +17,3 @@ services:
       - 9965:9965
     volumes:
       - .:/src
-
-  pg_to_kafka_worker:
-      build: .
-      restart: always
-      command: python -u workers/pg_to_kafka.py 
-      volumes:
-        - .:/src
