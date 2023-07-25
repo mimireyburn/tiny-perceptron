@@ -1,10 +1,8 @@
 import confluent_kafka
 import fastapi
 import redis
-import uuid
 import json
 import time
-import psycopg2
 
 
 app = fastapi.FastAPI()

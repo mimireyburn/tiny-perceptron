@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    connection = psycopg2.connect(host="localhost", user="root", port=5432, database="W9sV6cL2dX", password="E5rG7tY3fH")
+    connection = psycopg2.connect(host="65.109.54.241", user="root", port=5432, database="W9sV6cL2dX", password="E5rG7tY3fH")
     cur = connection.cursor()
 
     if request.method == 'POST':
