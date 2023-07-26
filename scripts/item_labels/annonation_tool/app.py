@@ -1,9 +1,21 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, jsonify
 import psycopg2
 import csv
 import io
 
 app = Flask(__name__)
+
+@app.route('/suggestions')
+def suggestions():
+    connection = psycopg2.connect(host="65.109.54.241", user="root", port=5432, database="W9sV6cL2dX", password="E5rG7tY3fH")
+    cur = connection.cursor()
+    term = request.args.get('term')
+  
+    cur.execute("SELECT user_input1, COUNT(*) as count FROM item_img_content WHERE user_input1 ILIKE %s GROUP BY user_input1 ORDER BY count DESC LIMIT 5", (term+'%',))
+    connection.commit()
+    suggestions = [row[0] for row in cur.fetchall()]
+
+    return jsonify(suggestions)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -65,20 +77,6 @@ def download():
 
     return output
 
-@app.route('/suggestions', methods=['GET'])
-def suggestions():
-    term = request.args.get('term')  # Get the term from the query string
-
-    connection = psycopg2.connect(host="65.109.54.241", user="root", port=5432, database="W9sV6cL2dX", password="E5rG7tY3fH")
-    cur = connection.cursor()
-
-    # Fetch suggestions from the database
-    cur.execute("SELECT DISTINCT user_input1 FROM item_img_content WHERE user_input1 ILIKE %s LIMIT 10", (term + '%',))
-    records = cur.fetchall()
-
-    # Return the suggestions as JSON
-    return jsonify([row[0] for row in records])
-
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000 ,debug=True)
+
