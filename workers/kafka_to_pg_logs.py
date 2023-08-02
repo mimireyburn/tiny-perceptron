@@ -27,15 +27,17 @@ def insert_to_postgres(store):
       user_id,
       session_id,
       item_id,
-      type
-    ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+      type,
+      strategy
+    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
   """
 
   insert_data = []
 
   for evt_log in store:
     cur_date = datetime.datetime.fromtimestamp(evt_log["ts"])
-
+    
+    print("event log", evt_log)
     insert_data.append((
       cur_date.date(),
       cur_date.replace(minute=0, second=0, microsecond=0),
@@ -43,10 +45,11 @@ def insert_to_postgres(store):
       evt_log["user_id"],
       evt_log["session"],
       evt_log["item_id"], 
-      evt_log["type"]
+      evt_log["type"],
+      evt_log.get("strategy", None)
     ))
 
-    print(evt_log)
+    print("insert data created")
 
   try:
     cursor = p.cursor()
