@@ -1,0 +1,201 @@
+2023-08-15 17:52:23,694 INFO    StreamThr :1114798 [internal.py:wandb_internal():86] W&B internal server running at pid: 1114798, started at: 2023-08-15 17:52:23.693925
+2023-08-15 17:52:23,695 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: status
+2023-08-15 17:52:23,698 INFO    WriterThread:1114798 [datastore.py:open_for_write():85] open: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/run-9iv26tny.wandb
+2023-08-15 17:52:23,699 DEBUG   SenderThread:1114798 [sender.py:send():379] send: header
+2023-08-15 17:52:23,704 DEBUG   SenderThread:1114798 [sender.py:send():379] send: run
+2023-08-15 17:52:24,253 INFO    SenderThread:1114798 [dir_watcher.py:__init__():211] watching files in: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files
+2023-08-15 17:52:24,254 INFO    SenderThread:1114798 [sender.py:_start_run_threads():1121] run started: 9iv26tny with start time 1692114743.694237
+2023-08-15 17:52:24,254 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,254 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,268 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: check_version
+2023-08-15 17:52:24,268 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: check_version
+2023-08-15 17:52:24,398 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: run_start
+2023-08-15 17:52:24,399 DEBUG   HandlerThread:1114798 [system_info.py:__init__():31] System info init
+2023-08-15 17:52:24,400 DEBUG   HandlerThread:1114798 [system_info.py:__init__():46] System info init done
+2023-08-15 17:52:24,400 INFO    HandlerThread:1114798 [system_monitor.py:start():181] Starting system monitor
+2023-08-15 17:52:24,400 INFO    SystemMonitor:1114798 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-08-15 17:52:24,400 INFO    HandlerThread:1114798 [system_monitor.py:probe():201] Collecting system info
+2023-08-15 17:52:24,400 INFO    SystemMonitor:1114798 [interfaces.py:start():190] Started cpu monitoring
+2023-08-15 17:52:24,401 INFO    SystemMonitor:1114798 [interfaces.py:start():190] Started disk monitoring
+2023-08-15 17:52:24,401 INFO    SystemMonitor:1114798 [interfaces.py:start():190] Started memory monitoring
+2023-08-15 17:52:24,402 INFO    SystemMonitor:1114798 [interfaces.py:start():190] Started network monitoring
+2023-08-15 17:52:24,446 DEBUG   HandlerThread:1114798 [system_info.py:probe():195] Probing system
+2023-08-15 17:52:24,448 DEBUG   HandlerThread:1114798 [system_info.py:_probe_git():180] Probing git
+2023-08-15 17:52:24,453 DEBUG   HandlerThread:1114798 [system_info.py:_probe_git():188] Probing git done
+2023-08-15 17:52:24,453 DEBUG   HandlerThread:1114798 [system_info.py:probe():240] Probing system done
+2023-08-15 17:52:24,453 DEBUG   HandlerThread:1114798 [system_monitor.py:probe():210] {'os': 'Linux-5.15.0-73-generic-x86_64-with-glibc2.35', 'python': '3.10.12', 'heartbeatAt': '2023-08-15T15:52:24.447033', 'startedAt': '2023-08-15T15:52:23.688630', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://github.com/mimireyburn/tiny-perceptron.git', 'commit': 'b891d68c67911479d2f8d398171b2e95f3bb59bb'}, 'email': 'a.rignell16@ejm.org', 'root': '/root/tiny-perceptron', 'host': 'Ubuntu-2204-jammy-amd64-base', 'username': 'root', 'executable': '/bin/python3', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2616.68025, 'min': 2200.0, 'max': 3600.0}, 'cpu_freq_per_core': [{'current': 3600.0, 'min': 2200.0, 'max': 3600.0}, {'current': 2099.905, 'min': 2200.0, 'max': 3600.0}, {'current': 3600.0, 'min': 2200.0, 'max': 3600.0}, {'current': 3600.0, 'min': 2200.0, 'max': 3600.0}, {'current': 2639.457, 'min': 2200.0, 'max': 3600.0}, {'current': 2099.548, 'min': 2200.0, 'max': 3600.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3600.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3600.0}, {'current': 4191.388, 'min': 2200.0, 'max': 3600.0}, {'current': 4192.563, 'min': 2200.0, 'max': 3600.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3600.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3600.0}], 'disk': {'total': 435.77496337890625, 'used': 307.59944915771484}, 'memory': {'total': 62.72331237792969}}
+2023-08-15 17:52:24,453 INFO    HandlerThread:1114798 [system_monitor.py:probe():211] Finished collecting system info
+2023-08-15 17:52:24,453 INFO    HandlerThread:1114798 [system_monitor.py:probe():214] Publishing system info
+2023-08-15 17:52:24,453 DEBUG   HandlerThread:1114798 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-08-15 17:52:24,453 DEBUG   HandlerThread:1114798 [system_info.py:_save_pip():67] Saving pip packages done
+2023-08-15 17:52:24,454 INFO    HandlerThread:1114798 [system_monitor.py:probe():216] Finished publishing system info
+2023-08-15 17:52:24,458 DEBUG   SenderThread:1114798 [sender.py:send():379] send: files
+2023-08-15 17:52:24,458 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-08-15 17:52:24,466 DEBUG   SenderThread:1114798 [sender.py:send():379] send: telemetry
+2023-08-15 17:52:24,466 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: stop_status
+2023-08-15 17:52:24,466 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: stop_status
+2023-08-15 17:52:24,466 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,468 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,468 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,468 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,469 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,469 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,469 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,469 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: partial_history
+2023-08-15 17:52:24,723 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,723 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,723 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,724 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,724 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,724 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,725 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,725 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,725 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,725 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,725 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,726 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,726 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,726 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,726 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,727 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,727 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,727 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,727 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,727 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,728 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,728 DEBUG   SenderThread:1114798 [sender.py:send():379] send: history
+2023-08-15 17:52:24,728 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: summary_record
+2023-08-15 17:52:24,728 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,729 DEBUG   SenderThread:1114798 [sender.py:send():379] send: telemetry
+2023-08-15 17:52:24,729 DEBUG   SenderThread:1114798 [sender.py:send():379] send: exit
+2023-08-15 17:52:24,729 INFO    SenderThread:1114798 [sender.py:send_exit():584] handling exit code: 0
+2023-08-15 17:52:24,729 INFO    SenderThread:1114798 [sender.py:send_exit():586] handling runtime: 0
+2023-08-15 17:52:24,729 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,729 INFO    SenderThread:1114798 [sender.py:send_exit():592] send defer
+2023-08-15 17:52:24,730 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,730 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 0
+2023-08-15 17:52:24,730 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,730 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 0
+2023-08-15 17:52:24,730 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 1
+2023-08-15 17:52:24,730 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,730 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 1
+2023-08-15 17:52:24,730 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,730 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 1
+2023-08-15 17:52:24,730 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 2
+2023-08-15 17:52:24,730 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,730 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 2
+2023-08-15 17:52:24,730 INFO    HandlerThread:1114798 [system_monitor.py:finish():190] Stopping system monitor
+2023-08-15 17:52:24,731 DEBUG   SystemMonitor:1114798 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-08-15 17:52:24,731 INFO    HandlerThread:1114798 [interfaces.py:finish():202] Joined cpu monitor
+2023-08-15 17:52:24,731 DEBUG   SystemMonitor:1114798 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-08-15 17:52:24,731 INFO    HandlerThread:1114798 [interfaces.py:finish():202] Joined disk monitor
+2023-08-15 17:52:24,731 DEBUG   SystemMonitor:1114798 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-08-15 17:52:24,731 INFO    HandlerThread:1114798 [interfaces.py:finish():202] Joined memory monitor
+2023-08-15 17:52:24,732 INFO    HandlerThread:1114798 [interfaces.py:finish():202] Joined network monitor
+2023-08-15 17:52:24,732 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,732 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 2
+2023-08-15 17:52:24,732 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 3
+2023-08-15 17:52:24,732 DEBUG   SenderThread:1114798 [sender.py:send():379] send: stats
+2023-08-15 17:52:24,732 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,732 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 3
+2023-08-15 17:52:24,733 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,733 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 3
+2023-08-15 17:52:24,733 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 4
+2023-08-15 17:52:24,733 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,733 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 4
+2023-08-15 17:52:24,733 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,733 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 4
+2023-08-15 17:52:24,733 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 5
+2023-08-15 17:52:24,733 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,733 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 5
+2023-08-15 17:52:24,733 DEBUG   SenderThread:1114798 [sender.py:send():379] send: summary
+2023-08-15 17:52:24,734 INFO    SenderThread:1114798 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-15 17:52:24,734 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,734 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 5
+2023-08-15 17:52:24,734 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 6
+2023-08-15 17:52:24,734 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,734 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 6
+2023-08-15 17:52:24,734 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,734 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 6
+2023-08-15 17:52:24,738 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 17:52:24,948 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 7
+2023-08-15 17:52:24,948 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,948 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 7
+2023-08-15 17:52:24,948 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,948 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 7
+2023-08-15 17:52:24,948 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 8
+2023-08-15 17:52:24,948 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,948 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 8
+2023-08-15 17:52:24,948 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,948 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 8
+2023-08-15 17:52:24,949 INFO    SenderThread:1114798 [job_builder.py:build():281] Attempting to build job artifact
+2023-08-15 17:52:24,949 INFO    SenderThread:1114798 [job_builder.py:build():297] run is notebook based run
+2023-08-15 17:52:24,949 INFO    SenderThread:1114798 [job_builder.py:_get_source_type():400] is repo sourced job
+2023-08-15 17:52:24,949 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 9
+2023-08-15 17:52:24,949 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:24,949 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 9
+2023-08-15 17:52:24,949 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:24,949 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 9
+2023-08-15 17:52:24,949 INFO    SenderThread:1114798 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-08-15 17:52:25,145 INFO    wandb-upload_0:1114798 [upload_job.py:push():131] Uploaded file /tmp/tmpczjy_pcvwandb/fu6dyszo-wandb-metadata.json
+2023-08-15 17:52:25,255 INFO    SenderThread:1114798 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/config.yaml
+2023-08-15 17:52:25,256 INFO    SenderThread:1114798 [dir_watcher.py:_on_file_created():271] file/dir created: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/wandb-summary.json
+2023-08-15 17:52:25,256 INFO    SenderThread:1114798 [dir_watcher.py:_on_file_created():271] file/dir created: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/wandb-metadata.json
+2023-08-15 17:52:25,256 INFO    SenderThread:1114798 [dir_watcher.py:_on_file_created():271] file/dir created: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/requirements.txt
+2023-08-15 17:52:25,256 INFO    SenderThread:1114798 [dir_watcher.py:finish():388] scan: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files
+2023-08-15 17:52:25,256 INFO    SenderThread:1114798 [dir_watcher.py:finish():402] scan save: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/config.yaml config.yaml
+2023-08-15 17:52:25,256 INFO    SenderThread:1114798 [dir_watcher.py:finish():402] scan save: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/requirements.txt requirements.txt
+2023-08-15 17:52:25,257 INFO    SenderThread:1114798 [dir_watcher.py:finish():402] scan save: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/wandb-metadata.json wandb-metadata.json
+2023-08-15 17:52:25,257 INFO    SenderThread:1114798 [dir_watcher.py:finish():402] scan save: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/wandb-summary.json wandb-summary.json
+2023-08-15 17:52:25,257 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 10
+2023-08-15 17:52:25,257 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:25,257 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 10
+2023-08-15 17:52:25,261 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:25,262 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 10
+2023-08-15 17:52:25,262 INFO    SenderThread:1114798 [file_pusher.py:finish():159] shutting down file pusher
+2023-08-15 17:52:25,468 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: poll_exit
+2023-08-15 17:52:25,468 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: poll_exit
+2023-08-15 17:52:25,642 INFO    wandb-upload_0:1114798 [upload_job.py:push():131] Uploaded file /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/requirements.txt
+2023-08-15 17:52:25,749 INFO    wandb-upload_1:1114798 [upload_job.py:push():131] Uploaded file /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/config.yaml
+2023-08-15 17:52:25,875 INFO    wandb-upload_2:1114798 [upload_job.py:push():131] Uploaded file /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/files/wandb-summary.json
+2023-08-15 17:52:26,075 INFO    Thread-11 (_thread_body):1114798 [sender.py:transition_state():612] send defer: 11
+2023-08-15 17:52:26,075 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:26,075 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 11
+2023-08-15 17:52:26,076 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:26,076 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 11
+2023-08-15 17:52:26,076 INFO    SenderThread:1114798 [file_pusher.py:join():164] waiting for file pusher
+2023-08-15 17:52:26,076 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 12
+2023-08-15 17:52:26,076 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:26,076 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 12
+2023-08-15 17:52:26,076 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:26,076 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 12
+2023-08-15 17:52:26,076 INFO    SenderThread:1114798 [file_stream.py:finish():593] file stream finish called
+2023-08-15 17:52:26,468 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: poll_exit
+2023-08-15 17:52:26,752 INFO    SenderThread:1114798 [file_stream.py:finish():597] file stream finish is done
+2023-08-15 17:52:26,753 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 13
+2023-08-15 17:52:26,753 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: poll_exit
+2023-08-15 17:52:26,753 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:26,753 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 13
+2023-08-15 17:52:26,753 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:26,754 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 13
+2023-08-15 17:52:26,754 INFO    SenderThread:1114798 [sender.py:transition_state():612] send defer: 14
+2023-08-15 17:52:26,754 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 17:52:26,754 INFO    HandlerThread:1114798 [handler.py:handle_request_defer():170] handle defer: 14
+2023-08-15 17:52:26,754 DEBUG   SenderThread:1114798 [sender.py:send():379] send: final
+2023-08-15 17:52:26,754 DEBUG   SenderThread:1114798 [sender.py:send():379] send: footer
+2023-08-15 17:52:26,754 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: defer
+2023-08-15 17:52:26,754 INFO    SenderThread:1114798 [sender.py:send_request_defer():608] handle sender defer: 14
+2023-08-15 17:52:26,755 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: poll_exit
+2023-08-15 17:52:26,755 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: server_info
+2023-08-15 17:52:26,755 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: poll_exit
+2023-08-15 17:52:26,756 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: get_summary
+2023-08-15 17:52:26,756 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: server_info
+2023-08-15 17:52:26,756 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: sampled_history
+2023-08-15 17:52:26,758 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: job_info
+2023-08-15 17:52:26,896 DEBUG   SenderThread:1114798 [sender.py:send_request():406] send_request: job_info
+2023-08-15 17:52:26,897 DEBUG   HandlerThread:1114798 [handler.py:handle_request():144] handle_request: shutdown
+2023-08-15 17:52:26,897 INFO    HandlerThread:1114798 [handler.py:finish():857] shutting down handler
+2023-08-15 17:52:27,758 INFO    WriterThread:1114798 [datastore.py:close():294] close: /root/tiny-perceptron/notebooks/Kaan/transformers/name_predict/wandb/run-20230815_175223-9iv26tny/run-9iv26tny.wandb
+2023-08-15 17:52:27,897 INFO    SenderThread:1114798 [sender.py:finish():1552] shutting down sender
+2023-08-15 17:52:27,897 INFO    SenderThread:1114798 [file_pusher.py:finish():159] shutting down file pusher
+2023-08-15 17:52:27,897 INFO    SenderThread:1114798 [file_pusher.py:join():164] waiting for file pusher

@@ -1,0 +1,36 @@
+wandb_version: 1
+
+architecture:
+  desc: null
+  value: Transformer
+dataset:
+  desc: null
+  value: names.txt
+epochs:
+  desc: null
+  value: 3
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.12
+    cli_version: 0.15.8
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    start_time: 1692114743.694237
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 2
+      - 16
+      - 23
+      4: 3.10.12
+      5: 0.15.8
+      8:
+      - 1
+      - 5
